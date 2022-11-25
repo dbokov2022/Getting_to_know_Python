@@ -8,63 +8,27 @@ for i in range(-abs(N), abs(N) + 1, 1):
     a = []
     for i in range(-abs(N), abs(N) + 1, 1):
         a.append(i)
-print(f'Список элементов от -N до N: {a}')
-
-# b = []
-# b = [2,5,6]
+print(f'Список элементов A: {a} (от -N до N)')
 
 
-# try:
-#     file = open("file.txt")
-#     try:
-#         s = file.readlines()
-#         print(s)
-#     finally:
-#         file.close()
-# except FileNotFoundError:
-#     print("Невозможно открыть файл")
+try:    # пробуем открыть файл
+    f = open("file.txt")
+    try:
+        b = f.read().splitlines()   # удаляем '\n'
+        print(f'Список элементов b: {b} (список позиций из файла)')
+    finally:
+        f.close()
+except FileNotFoundError:
+    print("Невозможно открыть файл")
 
 
-# with open('filename') as f:
-#     lines = [line.rstrip('\n') for line in f]
-
-# path = 'file.txt'
-# data = open(path, 'r')
-# print(data.read())
-# # b = data.read()
-# for line in data:
-# #     print(line)
-#     b.append(line)
-# data.close()
-# print(f'Список элементов b: {b}')
-b = []
-# with open("file.txt") as f:
-#     line = f.read().splitlines()
-#     for i in line:
-    #     print(line)
-    #     b.append((i).splitlines(","))
-    # b= list(f)
-    # lines = [line.rstrip('\n') for line in f]
-    # lines = f.read().splitlines()  # List with stripped line-breaks
-    # for line in f:
-    #     b.append(f.strip())
-
-# inp = "file.txt"
-# data = open(inp)
-# dat = data.read()
-# b = dat.splitlines()
-# print( b)
-    # print(lst) # for python 3
-b: ['2', '5', '6']
-
-print(f'Список элементов b: {b}')
-
-c = []  # пустой список, в него будем добавлять нужные элементы из списка a с индексом из списка b
+c = []  # создаем пустой список, в него будем добавлять нужные элементы из списка A с индексом из списка b
 for i in range(len(a)):
     for j in range(len(b)):
-        if i == b[j]:
+        if i == int(b[j]):
             c.append(a[i])   # добавляем в список
-print(f'Список элементов c: {c}')
+print(f'Список элементов c: {c} (элементы из списка A с индексом из списка b)')
+
 
 p = 1
 for i in range(len(c)):
