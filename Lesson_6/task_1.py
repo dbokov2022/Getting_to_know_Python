@@ -9,7 +9,7 @@
 # print(eval(n))  # преобразует строку в числа и считает
 
 # num = '1 - 2 * 3 / 5'
-num = '1 - 2 * 3'
+num = '1 + 2 * 3'
 print(num)
 
 num = num.split()
